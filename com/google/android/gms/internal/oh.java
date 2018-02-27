@@ -1,0 +1,80 @@
+package com.google.android.gms.internal;
+
+import android.os.Parcel;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+import java.util.Locale;
+
+public class oh
+  implements SafeParcelable
+{
+  public static final oi CREATOR;
+  public static final oh akf = new oh("com.google.android.gms", Locale.ENGLISH, null);
+  public final String akg;
+  public final String akh;
+  public final String aki;
+  public final String akj;
+  public final int versionCode;
+
+  static
+  {
+    CREATOR = new oi();
+  }
+
+  public oh(int paramInt, String paramString1, String paramString2, String paramString3, String paramString4)
+  {
+    this.versionCode = paramInt;
+    this.akg = paramString1;
+    this.akh = paramString2;
+    this.aki = paramString3;
+    this.akj = paramString4;
+  }
+
+  public oh(String paramString1, Locale paramLocale, String paramString2)
+  {
+    this(1, paramString1, paramLocale.toString(), paramString2, null);
+  }
+
+  public int describeContents()
+  {
+    return 0;
+  }
+
+  public boolean equals(Object paramObject)
+  {
+    if (this == paramObject);
+    oh localoh;
+    do
+    {
+      return true;
+      if ((paramObject == null) || (!(paramObject instanceof oh)))
+        return false;
+      localoh = (oh)paramObject;
+    }
+    while ((this.akh.equals(localoh.akh)) && (this.akg.equals(localoh.akg)) && (jv.equal(this.aki, localoh.aki)) && (jv.equal(this.akj, localoh.akj)));
+    return false;
+  }
+
+  public int hashCode()
+  {
+    Object[] arrayOfObject = new Object[3];
+    arrayOfObject[0] = this.akg;
+    arrayOfObject[1] = this.akh;
+    arrayOfObject[2] = this.aki;
+    return jv.hashCode(arrayOfObject);
+  }
+
+  public String toString()
+  {
+    return jv.h(this).a("clientPackageName", this.akg).a("locale", this.akh).a("accountName", this.aki).a("gCoreClientName", this.akj).toString();
+  }
+
+  public void writeToParcel(Parcel paramParcel, int paramInt)
+  {
+    oi.a(this, paramParcel, paramInt);
+  }
+}
+
+/* Location:           D:\Testing\hacking\dex2jar-0.0.9.15\dex2jar-0.0.9.15\classes_dex2jar.jar
+ * Qualified Name:     com.google.android.gms.internal.oh
+ * JD-Core Version:    0.6.0
+ */
